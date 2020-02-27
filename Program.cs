@@ -11,7 +11,6 @@ namespace GuessingGame
 
             for (int i = 0; i < 3; i++)
             {
-
                 Console.WriteLine("Guess a number between 1 and 10");
                 string userGuess = Console.ReadLine();
                 int userGuessInt = int.Parse(userGuess);
@@ -21,11 +20,15 @@ namespace GuessingGame
                     Console.WriteLine($"You guessed it! It was {secretNumber}");
                     return;
                 }
-                else
+                else if (userGuessInt > secretNumber)
                 {
-                    Console.WriteLine("Nope that was not correct");
+                    Console.WriteLine("Nope, lower!");
                 }
-
+                else if (userGuessInt < secretNumber)
+                {
+                    Console.WriteLine("Nope, higher!");
+                }
+                Console.WriteLine($"You are incorrect! It was {secretNumber}");
             }
         }
     }
