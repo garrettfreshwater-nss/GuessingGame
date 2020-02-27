@@ -15,16 +15,16 @@ namespace GuessingGame
                 string userGuess = Console.ReadLine();
                 int userGuessInt = int.Parse(userGuess);
 
-                if (userGuessInt == secretNumber)
+                if (userGuessInt == secretNumber && i != 2)
                 {
                     Console.WriteLine($"You guessed it! It was {secretNumber}");
                     return;
                 }
-                else if (userGuessInt > secretNumber)
+                else if (userGuessInt > secretNumber && i != 2)
                 {
                     Console.WriteLine("Nope, lower!");
                 }
-                else if (userGuessInt < secretNumber)
+                else if (userGuessInt < secretNumber && i != 2)
                 {
                     Console.WriteLine("Nope, higher!");
                 }
